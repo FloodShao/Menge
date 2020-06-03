@@ -111,6 +111,7 @@ class MENGE_API ProfileSelector : public Element {
    @returns  True if successful, false otherwise.
    */
   virtual bool cacheProfiles(HASH_MAP<std::string, AgentInitializer*>& profiles) = 0;
+
 };
 
 }  // namespace Agents

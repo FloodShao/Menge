@@ -75,6 +75,7 @@ class MENGE_API ConstProfileSelector : public ProfileSelector {
    @param    name    The name of the selector's profile.
    */
   void setName(const std::string& name) { _profileName = name; }
+  
 
  protected:
   /*!

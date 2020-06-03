@@ -316,6 +316,16 @@ class MENGE_API BaseAgent : public ProximityQuery {
   std::vector<NearObstacle> _nearObstacles;
 
   /*!
+   @brief    Mark whether the agent is external
+
+   External agents only update the position from outside. Usually the agent profile is static, 
+   menge does not plan for external agents.
+   */
+  bool _external = false;
+
+  std::string _typeName = "";
+
+  /*!
    @brief      Inserts an agent neighbor into the set of neighbors of this agent.
 
    @param      agent          A pointer to the agent to be inserted.
@@ -341,6 +351,13 @@ class MENGE_API BaseAgent : public ProximityQuery {
                       stride length.
    */
   virtual void setStrideParameters(float stride, float buffer) {}
+
+  // Methods needed for a spatial query filter to work
+
+  /*!
+   @brief     Check whether the agent is external
+   */
+  virtual bool isExternal();
 
   // Methods needed for a spatial query filter to work
 

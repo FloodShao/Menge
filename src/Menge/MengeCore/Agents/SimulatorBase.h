@@ -270,6 +270,10 @@ bool SimulatorBase<Agent>::setExpParam(const std::string& paramName,
 
 template <class Agent>
 void SimulatorBase<Agent>::computeNeighbors(Agent* agent) {
+  // do not plan for external agents
+  if(agent->isExternal()) {
+    return;
+  }
   // obstacles
   agent->startQuery();
   _spatialQuery->obstacleQuery(agent);

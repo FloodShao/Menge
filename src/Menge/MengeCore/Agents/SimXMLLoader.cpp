@@ -3,7 +3,7 @@
 License
 
 Menge
-Copyright © and trademark ™ 2012-14 University of North Carolina at Chapel Hill.
+Copyright ï¿½ and trademark ï¿½ 2012-14 University of North Carolina at Chapel Hill.
 All rights reserved.
 
 Permission to use, copy, modify, and distribute this software and its documentation
@@ -416,6 +416,10 @@ bool SimXMLLoader::parseAgentProfile(TiXmlElement* node, AgentInitializer* agent
     init = agentInit->copy();
     init->setDefaults();
   }
+  
+  init->setTypeName(name);
+  // logger << Logger::INFO_MSG << "agent initializer typename: " << name << init->getTypeName() << ".";
+
   _profiles[name] = init;
 
   for (TiXmlElement* child = node->FirstChildElement(); child;

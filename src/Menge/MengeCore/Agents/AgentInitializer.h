@@ -138,6 +138,10 @@ class MENGE_API AgentInitializer {
    */
   virtual void setDefaults();
 
+  virtual void setTypeName(const std::string& name);
+
+  virtual std::string getTypeName();
+
   /*!
    @brief    Creates a copy of this AgentInitializer instance.
 
@@ -338,6 +342,7 @@ class MENGE_API AgentInitializer {
    */
   ParseResult getIntGenerator(IntGenerator*& gen, TiXmlElement* node);
 
+
   /*!
    @brief    The maximum speed the agent can take.
    */
@@ -389,6 +394,8 @@ class MENGE_API AgentInitializer {
    @brief    The population class for this agent.  See Agents::BaseAgent::_class for details.
    */
   size_t _class;
+
+  std::string _typeName;
 
   /*!
    @brief    Velocity Modifiers to be applied to this class

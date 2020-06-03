@@ -3,7 +3,7 @@
 License
 
 Menge
-Copyright © and trademark ™ 2012-14 University of North Carolina at Chapel Hill.
+Copyright ï¿½ and trademark ï¿½ 2012-14 University of North Carolina at Chapel Hill.
 All rights reserved.
 
 Permission to use, copy, modify, and distribute this software and its documentation
@@ -237,6 +237,9 @@ float BaseAgent::getMaxAgentRange() {
 
   return _neighborDist * _neighborDist;
 }
+
+///////////////////////////////////////////////////////////
+bool BaseAgent::isExternal() { return _external; }
 
 }  // namespace Agents
 }  // namespace Menge
