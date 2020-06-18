@@ -3,7 +3,7 @@
 License
 
 Menge
-Copyright © and trademark ™ 2012-14 University of North Carolina at Chapel Hill.
+Copyright ï¿½ and trademark ï¿½ 2012-14 University of North Carolina at Chapel Hill.
 All rights reserved.
 
 Permission to use, copy, modify, and distribute this software and its documentation
@@ -46,7 +46,7 @@ namespace Menge {
 //                     Implementation of Utilities
 ////////////////////////////////////////////////////////////////////////////
 
-float toFloat(const std::string& value) throw(UtilException) {
+float toFloat(const std::string& value) {
   float result;
   std::stringstream ss(value, std::ios_base::in);
   ss >> result;
@@ -58,7 +58,7 @@ float toFloat(const std::string& value) throw(UtilException) {
 
 ////////////////////////////////////////////////////////////////////////////
 
-int toInt(const std::string& value) throw(UtilException) {
+int toInt(const std::string& value) {
   int result;
   std::stringstream ss(value, std::ios_base::in);
   ss >> result;
@@ -70,7 +70,7 @@ int toInt(const std::string& value) throw(UtilException) {
 
 ////////////////////////////////////////////////////////////////////////////
 
-size_t toSize_t(const std::string& value) throw(UtilException) {
+size_t toSize_t(const std::string& value) {
   size_t result;
   std::stringstream ss(value, std::ios_base::in);
   ss >> result;

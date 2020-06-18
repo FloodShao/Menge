@@ -145,8 +145,11 @@ class SimulatorBase : public SimulatorInterface {
    @param      value        A string containing the value for the parameter.
    @returns    True if the parameter was successfully set, false otherwise.
    */
+  // ISO C++ 17 does not allow throw() expression
+  // virtual bool setExpParam(const std::string& paramName,
+  //                          const std::string& value) throw(XMLParamException);
   virtual bool setExpParam(const std::string& paramName,
-                           const std::string& value) throw(XMLParamException);
+                           const std::string& value);
 
  protected:
   /*!
@@ -246,10 +249,29 @@ BaseAgent* SimulatorBase<Agent>::addAgent(const Vector2& pos, AgentInitializer* 
 }
 
 ////////////////////////////////////////////////////////////////
+// ISO C++ 17 does not 
+// template <class Agent>
+// bool SimulatorBase<Agent>::setExpParam(const std::string& paramName,
+//                                        const std::string& value) throw(XMLParamException) {
+//   if (paramName == "time_step") {
+//     try {
+//       LOGICAL_TIME_STEP = toFloat(value);
+//     } catch (UtilException) {
+//       throw XMLParamException(
+//           std::string("Common parameters \"time_step\" value couldn't be converted "
+//                       "to a float.  Found the value: ") +
+//           value);
+//     }
+//   } else {
+//     return false;
+//   }
+
+//   return true;
+// }
 
 template <class Agent>
 bool SimulatorBase<Agent>::setExpParam(const std::string& paramName,
-                                       const std::string& value) throw(XMLParamException) {
+                                       const std::string& value) {
   if (paramName == "time_step") {
     try {
       LOGICAL_TIME_STEP = toFloat(value);
