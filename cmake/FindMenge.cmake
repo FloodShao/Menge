@@ -1,5 +1,5 @@
 # set the package root dir
-set( MENGE_PACKAGE_ROOT /headless/thirdpart_lib/Menge)
+set( MENGE_PACKAGE_ROOT ${CMAKE_MODULE_PATH}/..)
 
 # I need to find libmengeCore.so and libmengVis.so for MENGE_LIBRARIES
 # HINTS direct the right path
